@@ -13,7 +13,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val cardView = recycler_cardview
         val itemList = mutableListOf<MyExpandableAdapter.MyItemExpandable>()
         itemList.add(MyExpandableAdapter.MyItemExpandable(MyExpandableAdapter.PARENT, "P-Lang"))
         itemList.add(MyExpandableAdapter.MyItemExpandable(MyExpandableAdapter.CHILD, "Kotlin"))
@@ -32,8 +31,8 @@ class MainActivity : AppCompatActivity() {
                 MyExpandableAdapter.MyItemExpandable(MyExpandableAdapter.CHILD, "Oreo"))
         itemList.add(item)
 
-        cardView.layoutManager = LinearLayoutManager(this)
-        cardView.adapter = MyExpandableAdapter(itemList, object : MyExpandableRecyclerClickListener {
+        rv.layoutManager = LinearLayoutManager(this)
+        rv.adapter = MyExpandableAdapter(itemList, object : MyExpandableRecyclerClickListener {
             override fun onParentClicked(id: Int, text: String) {
                 Toast.makeText(this@MainActivity, "id $id, name $text, parent",
                         Toast.LENGTH_LONG).show()

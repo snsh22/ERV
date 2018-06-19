@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import comm.saingaung.senghein.simplerecyclerview.uty.itf.MyExpandableRecyclerClickListener
-import kotlinx.android.synthetic.main.cardview_parent.view.*
+import kotlinx.android.synthetic.main.holder_expandable_parent.view.*
 
 /**
  * Created by L on 2017-09-30.
@@ -43,8 +43,8 @@ class MyExpandableAdapter(private var myItemExpandable: MutableList<MyItemExpand
         val inflater = LayoutInflater.from(parent?.context)
         var view: View? = null
         when (viewType) {
-            PARENT -> view = inflater.inflate(R.layout.cardview_parent, parent, false)
-            CHILD -> view = inflater.inflate(R.layout.cardview_child, parent, false)
+            PARENT -> view = inflater.inflate(R.layout.holder_expandable_parent, parent, false)
+            CHILD -> view = inflater.inflate(R.layout.holder_expandable_child, parent, false)
         }
         return ItemHolder(view, myExpandableRecyclerClickListener, viewType)
     }
